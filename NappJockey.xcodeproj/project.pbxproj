@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24416B8111C4CA220047AFDD /* Build & Test */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */;
+			buildPhases = (
+				24416B8011C4CA220047AFDD /* ShellScript */,
+			);
+			dependencies = (
+				24416B8511C4CA280047AFDD /* PBXTargetDependency */,
+			);
+			name = "Build & Test";
+			productName = "Build & test";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		24DD6CF91134B3F500162E58 /* DkNappJockeyModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* DkNappJockeyModule.h */; };
+		24DD6CFA1134B3F500162E58 /* DkNappJockeyModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* DkNappJockeyModule.m */; };
+		24DE9E1111C5FE74003F90F6 /* DkNappJockeyModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* DkNappJockeyModuleAssets.h */; };
+		24DE9E1211C5FE74003F90F6 /* DkNappJockeyModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* DkNappJockeyModuleAssets.m */; };
+		AA747D9F0F9514B9006C5449 /* DkNappJockey_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* DkNappJockey_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		B618F279194EE6D8009685D0 /* Jockey.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F277194EE6D8009685D0 /* Jockey.h */; };
+		B618F27A194EE6D8009685D0 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = B618F278194EE6D8009685D0 /* Jockey.m */; };
+		B618F27C194EE70D009685D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B618F27B194EE70D009685D0 /* UIKit.framework */; };
+		B618F280194EE7DD009685D0 /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F27E194EE7DD009685D0 /* JRSwizzle.h */; };
+		B618F281194EE7DD009685D0 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = B618F27F194EE7DD009685D0 /* JRSwizzle.m */; };
+		B618F284194EE88B009685D0 /* TiUIWebView+Extend.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F282194EE88B009685D0 /* TiUIWebView+Extend.h */; };
+		B618F285194EE88B009685D0 /* TiUIWebView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = B618F283194EE88B009685D0 /* TiUIWebView+Extend.m */; };
+		B618F288194F060C009685D0 /* TiUIWebViewProxy+Extend.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F286194F060C009685D0 /* TiUIWebViewProxy+Extend.h */; };
+		B618F289194F060C009685D0 /* TiUIWebViewProxy+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = B618F287194F060C009685D0 /* TiUIWebViewProxy+Extend.m */; };
+		B618F28C194F0B28009685D0 /* DkNappJockeyWebViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F28A194F0B28009685D0 /* DkNappJockeyWebViewProxy.h */; };
+		B618F28D194F0B28009685D0 /* DkNappJockeyWebViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B618F28B194F0B28009685D0 /* DkNappJockeyWebViewProxy.m */; };
+		B618F290194F0FC0009685D0 /* DkNappJockeyWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F28E194F0FC0009685D0 /* DkNappJockeyWebView.h */; };
+		B618F291194F0FC0009685D0 /* DkNappJockeyWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B618F28F194F0FC0009685D0 /* DkNappJockeyWebView.m */; };
+		B655668619501DBE0013B4E3 /* NappUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = B655668419501DBE0013B4E3 /* NappUserAgent.h */; };
+		B655668719501DBE0013B4E3 /* NappUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = B655668519501DBE0013B4E3 /* NappUserAgent.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24416B8411C4CA280047AFDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = NappJockey;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24DD6CF71134B3F500162E58 /* DkNappJockeyModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DkNappJockeyModule.h; path = Classes/DkNappJockeyModule.h; sourceTree = "<group>"; };
+		24DD6CF81134B3F500162E58 /* DkNappJockeyModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DkNappJockeyModule.m; path = Classes/DkNappJockeyModule.m; sourceTree = "<group>"; };
+		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
+		24DE9E0F11C5FE74003F90F6 /* DkNappJockeyModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DkNappJockeyModuleAssets.h; path = Classes/DkNappJockeyModuleAssets.h; sourceTree = "<group>"; };
+		24DE9E1011C5FE74003F90F6 /* DkNappJockeyModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DkNappJockeyModuleAssets.m; path = Classes/DkNappJockeyModuleAssets.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* DkNappJockey_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DkNappJockey_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B618F277194EE6D8009685D0 /* Jockey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Jockey.h; path = Classes/JockeyJS/Jockey.h; sourceTree = "<group>"; };
+		B618F278194EE6D8009685D0 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Jockey.m; path = Classes/JockeyJS/Jockey.m; sourceTree = "<group>"; };
+		B618F27B194EE70D009685D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B618F27E194EE7DD009685D0 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = Classes/JRSwizzle/JRSwizzle.h; sourceTree = "<group>"; };
+		B618F27F194EE7DD009685D0 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = Classes/JRSwizzle/JRSwizzle.m; sourceTree = "<group>"; };
+		B618F282194EE88B009685D0 /* TiUIWebView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUIWebView+Extend.h"; path = "Classes/TiUIWebView+Extend.h"; sourceTree = "<group>"; };
+		B618F283194EE88B009685D0 /* TiUIWebView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUIWebView+Extend.m"; path = "Classes/TiUIWebView+Extend.m"; sourceTree = "<group>"; };
+		B618F286194F060C009685D0 /* TiUIWebViewProxy+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUIWebViewProxy+Extend.h"; path = "Classes/TiUIWebViewProxy+Extend.h"; sourceTree = "<group>"; };
+		B618F287194F060C009685D0 /* TiUIWebViewProxy+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUIWebViewProxy+Extend.m"; path = "Classes/TiUIWebViewProxy+Extend.m"; sourceTree = "<group>"; };
+		B618F28A194F0B28009685D0 /* DkNappJockeyWebViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DkNappJockeyWebViewProxy.h; path = Classes/DkNappJockeyWebViewProxy.h; sourceTree = "<group>"; };
+		B618F28B194F0B28009685D0 /* DkNappJockeyWebViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DkNappJockeyWebViewProxy.m; path = Classes/DkNappJockeyWebViewProxy.m; sourceTree = "<group>"; };
+		B618F28E194F0FC0009685D0 /* DkNappJockeyWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DkNappJockeyWebView.h; path = Classes/DkNappJockeyWebView.h; sourceTree = "<group>"; };
+		B618F28F194F0FC0009685D0 /* DkNappJockeyWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DkNappJockeyWebView.m; path = Classes/DkNappJockeyWebView.m; sourceTree = "<group>"; };
+		B655668419501DBE0013B4E3 /* NappUserAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NappUserAgent.h; path = Classes/NappUserAgent.h; sourceTree = "<group>"; };
+		B655668519501DBE0013B4E3 /* NappUserAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NappUserAgent.m; path = Classes/NappUserAgent.m; sourceTree = "<group>"; };
+		D2AAC07E0554694100DB518D /* libDkNappJockey.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDkNappJockey.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B618F27C194EE70D009685D0 /* UIKit.framework in Frameworks */,
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libDkNappJockey.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* NappJockey */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = NappJockey;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B618F27B194EE70D009685D0 /* UIKit.framework */,
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B655668319501D940013B4E3 /* Napp */,
+				B618F27D194EE7D0009685D0 /* JRSwizzle */,
+				B618F276194EE6CD009685D0 /* JockeyJS */,
+				24DE9E0F11C5FE74003F90F6 /* DkNappJockeyModuleAssets.h */,
+				24DE9E1011C5FE74003F90F6 /* DkNappJockeyModuleAssets.m */,
+				24DD6CF71134B3F500162E58 /* DkNappJockeyModule.h */,
+				24DD6CF81134B3F500162E58 /* DkNappJockeyModule.m */,
+				B618F282194EE88B009685D0 /* TiUIWebView+Extend.h */,
+				B618F283194EE88B009685D0 /* TiUIWebView+Extend.m */,
+				B618F286194F060C009685D0 /* TiUIWebViewProxy+Extend.h */,
+				B618F287194F060C009685D0 /* TiUIWebViewProxy+Extend.m */,
+				B618F28A194F0B28009685D0 /* DkNappJockeyWebViewProxy.h */,
+				B618F28B194F0B28009685D0 /* DkNappJockeyWebViewProxy.m */,
+				B618F28E194F0FC0009685D0 /* DkNappJockeyWebView.h */,
+				B618F28F194F0FC0009685D0 /* DkNappJockeyWebView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* DkNappJockey_Prefix.pch */,
+				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		B618F276194EE6CD009685D0 /* JockeyJS */ = {
+			isa = PBXGroup;
+			children = (
+				B618F277194EE6D8009685D0 /* Jockey.h */,
+				B618F278194EE6D8009685D0 /* Jockey.m */,
+			);
+			name = JockeyJS;
+			sourceTree = "<group>";
+		};
+		B618F27D194EE7D0009685D0 /* JRSwizzle */ = {
+			isa = PBXGroup;
+			children = (
+				B618F27E194EE7DD009685D0 /* JRSwizzle.h */,
+				B618F27F194EE7DD009685D0 /* JRSwizzle.m */,
+			);
+			name = JRSwizzle;
+			sourceTree = "<group>";
+		};
+		B655668319501D940013B4E3 /* Napp */ = {
+			isa = PBXGroup;
+			children = (
+				B655668419501DBE0013B4E3 /* NappUserAgent.h */,
+				B655668519501DBE0013B4E3 /* NappUserAgent.m */,
+			);
+			name = Napp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B655668619501DBE0013B4E3 /* NappUserAgent.h in Headers */,
+				AA747D9F0F9514B9006C5449 /* DkNappJockey_Prefix.pch in Headers */,
+				24DD6CF91134B3F500162E58 /* DkNappJockeyModule.h in Headers */,
+				24DE9E1111C5FE74003F90F6 /* DkNappJockeyModuleAssets.h in Headers */,
+				B618F290194F0FC0009685D0 /* DkNappJockeyWebView.h in Headers */,
+				B618F284194EE88B009685D0 /* TiUIWebView+Extend.h in Headers */,
+				B618F288194F060C009685D0 /* TiUIWebViewProxy+Extend.h in Headers */,
+				B618F279194EE6D8009685D0 /* Jockey.h in Headers */,
+				B618F28C194F0B28009685D0 /* DkNappJockeyWebViewProxy.h in Headers */,
+				B618F280194EE7DD009685D0 /* JRSwizzle.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* NappJockey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "NappJockey" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NappJockey;
+			productName = NappJockey;
+			productReference = D2AAC07E0554694100DB518D /* libDkNappJockey.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "NappJockey" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* NappJockey */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* NappJockey */,
+				24416B8111C4CA220047AFDD /* Build & Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24416B8011C4CA220047AFDD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B618F27A194EE6D8009685D0 /* Jockey.m in Sources */,
+				B655668719501DBE0013B4E3 /* NappUserAgent.m in Sources */,
+				B618F289194F060C009685D0 /* TiUIWebViewProxy+Extend.m in Sources */,
+				24DD6CFA1134B3F500162E58 /* DkNappJockeyModule.m in Sources */,
+				B618F285194EE88B009685D0 /* TiUIWebView+Extend.m in Sources */,
+				B618F291194F0FC0009685D0 /* DkNappJockeyWebView.m in Sources */,
+				B618F281194EE7DD009685D0 /* JRSwizzle.m in Sources */,
+				24DE9E1211C5FE74003F90F6 /* DkNappJockeyModuleAssets.m in Sources */,
+				B618F28D194F0B28009685D0 /* DkNappJockeyWebViewProxy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24416B8511C4CA280047AFDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* NappJockey */;
+			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/DkNappJockey.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DkNappJockey_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = DkNappJockey;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/DkNappJockey.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DkNappJockey_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = DkNappJockey;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/DkNappJockey.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DkNappJockey_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = DkNappJockey;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/DkNappJockey.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DkNappJockey_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = DkNappJockey;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		24416B8211C4CA220047AFDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & test";
+			};
+			name = Debug;
+		};
+		24416B8311C4CA220047AFDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build & test";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "NappJockey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "NappJockey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24416B8211C4CA220047AFDD /* Debug */,
+				24416B8311C4CA220047AFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
