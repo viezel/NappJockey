@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0
+apiversion: 2
+description: NappJockey
+author: Mads Moller
+license: MIT
+copyright: Copyright (c) 2014 by Napp ApS
+
+
+# these should not be edited
+name: nappjockey
+moduleid: dk.napp.jockey
+guid: 3df52793-2ee4-4ee5-b6f8-e3e8e94dfbce
+platform: android
+minsdk: 3.2.3.GA
