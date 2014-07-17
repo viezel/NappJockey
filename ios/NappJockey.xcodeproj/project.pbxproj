@@ -31,12 +31,6 @@
 		B618F279194EE6D8009685D0 /* Jockey.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F277194EE6D8009685D0 /* Jockey.h */; };
 		B618F27A194EE6D8009685D0 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = B618F278194EE6D8009685D0 /* Jockey.m */; };
 		B618F27C194EE70D009685D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B618F27B194EE70D009685D0 /* UIKit.framework */; };
-		B618F280194EE7DD009685D0 /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F27E194EE7DD009685D0 /* JRSwizzle.h */; };
-		B618F281194EE7DD009685D0 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = B618F27F194EE7DD009685D0 /* JRSwizzle.m */; };
-		B618F284194EE88B009685D0 /* TiUIWebView+Extend.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F282194EE88B009685D0 /* TiUIWebView+Extend.h */; };
-		B618F285194EE88B009685D0 /* TiUIWebView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = B618F283194EE88B009685D0 /* TiUIWebView+Extend.m */; };
-		B618F288194F060C009685D0 /* TiUIWebViewProxy+Extend.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F286194F060C009685D0 /* TiUIWebViewProxy+Extend.h */; };
-		B618F289194F060C009685D0 /* TiUIWebViewProxy+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = B618F287194F060C009685D0 /* TiUIWebViewProxy+Extend.m */; };
 		B618F28C194F0B28009685D0 /* DkNappJockeyWebViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F28A194F0B28009685D0 /* DkNappJockeyWebViewProxy.h */; };
 		B618F28D194F0B28009685D0 /* DkNappJockeyWebViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B618F28B194F0B28009685D0 /* DkNappJockeyWebViewProxy.m */; };
 		B618F290194F0FC0009685D0 /* DkNappJockeyWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = B618F28E194F0FC0009685D0 /* DkNappJockeyWebView.h */; };
@@ -66,12 +60,6 @@
 		B618F277194EE6D8009685D0 /* Jockey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Jockey.h; path = Classes/JockeyJS/Jockey.h; sourceTree = "<group>"; };
 		B618F278194EE6D8009685D0 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Jockey.m; path = Classes/JockeyJS/Jockey.m; sourceTree = "<group>"; };
 		B618F27B194EE70D009685D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B618F27E194EE7DD009685D0 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = Classes/JRSwizzle/JRSwizzle.h; sourceTree = "<group>"; };
-		B618F27F194EE7DD009685D0 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = Classes/JRSwizzle/JRSwizzle.m; sourceTree = "<group>"; };
-		B618F282194EE88B009685D0 /* TiUIWebView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUIWebView+Extend.h"; path = "Classes/TiUIWebView+Extend.h"; sourceTree = "<group>"; };
-		B618F283194EE88B009685D0 /* TiUIWebView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUIWebView+Extend.m"; path = "Classes/TiUIWebView+Extend.m"; sourceTree = "<group>"; };
-		B618F286194F060C009685D0 /* TiUIWebViewProxy+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TiUIWebViewProxy+Extend.h"; path = "Classes/TiUIWebViewProxy+Extend.h"; sourceTree = "<group>"; };
-		B618F287194F060C009685D0 /* TiUIWebViewProxy+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TiUIWebViewProxy+Extend.m"; path = "Classes/TiUIWebViewProxy+Extend.m"; sourceTree = "<group>"; };
 		B618F28A194F0B28009685D0 /* DkNappJockeyWebViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DkNappJockeyWebViewProxy.h; path = Classes/DkNappJockeyWebViewProxy.h; sourceTree = "<group>"; };
 		B618F28B194F0B28009685D0 /* DkNappJockeyWebViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DkNappJockeyWebViewProxy.m; path = Classes/DkNappJockeyWebViewProxy.m; sourceTree = "<group>"; };
 		B618F28E194F0FC0009685D0 /* DkNappJockeyWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DkNappJockeyWebView.h; path = Classes/DkNappJockeyWebView.h; sourceTree = "<group>"; };
@@ -126,16 +114,11 @@
 			isa = PBXGroup;
 			children = (
 				B655668319501D940013B4E3 /* Napp */,
-				B618F27D194EE7D0009685D0 /* JRSwizzle */,
 				B618F276194EE6CD009685D0 /* JockeyJS */,
 				24DE9E0F11C5FE74003F90F6 /* DkNappJockeyModuleAssets.h */,
 				24DE9E1011C5FE74003F90F6 /* DkNappJockeyModuleAssets.m */,
 				24DD6CF71134B3F500162E58 /* DkNappJockeyModule.h */,
 				24DD6CF81134B3F500162E58 /* DkNappJockeyModule.m */,
-				B618F282194EE88B009685D0 /* TiUIWebView+Extend.h */,
-				B618F283194EE88B009685D0 /* TiUIWebView+Extend.m */,
-				B618F286194F060C009685D0 /* TiUIWebViewProxy+Extend.h */,
-				B618F287194F060C009685D0 /* TiUIWebViewProxy+Extend.m */,
 				B618F28A194F0B28009685D0 /* DkNappJockeyWebViewProxy.h */,
 				B618F28B194F0B28009685D0 /* DkNappJockeyWebViewProxy.m */,
 				B618F28E194F0FC0009685D0 /* DkNappJockeyWebView.h */,
@@ -162,15 +145,6 @@
 			name = JockeyJS;
 			sourceTree = "<group>";
 		};
-		B618F27D194EE7D0009685D0 /* JRSwizzle */ = {
-			isa = PBXGroup;
-			children = (
-				B618F27E194EE7DD009685D0 /* JRSwizzle.h */,
-				B618F27F194EE7DD009685D0 /* JRSwizzle.m */,
-			);
-			name = JRSwizzle;
-			sourceTree = "<group>";
-		};
 		B655668319501D940013B4E3 /* Napp */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,11 +166,8 @@
 				24DD6CF91134B3F500162E58 /* DkNappJockeyModule.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* DkNappJockeyModuleAssets.h in Headers */,
 				B618F290194F0FC0009685D0 /* DkNappJockeyWebView.h in Headers */,
-				B618F284194EE88B009685D0 /* TiUIWebView+Extend.h in Headers */,
-				B618F288194F060C009685D0 /* TiUIWebViewProxy+Extend.h in Headers */,
 				B618F279194EE6D8009685D0 /* Jockey.h in Headers */,
 				B618F28C194F0B28009685D0 /* DkNappJockeyWebViewProxy.h in Headers */,
-				B618F280194EE7DD009685D0 /* JRSwizzle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,11 +242,8 @@
 			files = (
 				B618F27A194EE6D8009685D0 /* Jockey.m in Sources */,
 				B655668719501DBE0013B4E3 /* NappUserAgent.m in Sources */,
-				B618F289194F060C009685D0 /* TiUIWebViewProxy+Extend.m in Sources */,
 				24DD6CFA1134B3F500162E58 /* DkNappJockeyModule.m in Sources */,
-				B618F285194EE88B009685D0 /* TiUIWebView+Extend.m in Sources */,
 				B618F291194F0FC0009685D0 /* DkNappJockeyWebView.m in Sources */,
-				B618F281194EE7DD009685D0 /* JRSwizzle.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* DkNappJockeyModuleAssets.m in Sources */,
 				B618F28D194F0B28009685D0 /* DkNappJockeyWebViewProxy.m in Sources */,
 			);

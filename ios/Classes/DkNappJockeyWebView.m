@@ -1,8 +1,10 @@
 /**
- * Appcelerator Titanium Mobile
- * Copyright (c) 2009-2014 by Appcelerator, Inc. All Rights Reserved.
- * Licensed under the terms of the Apache Public License
- * Please see the LICENSE included with this distribution for details.
+ * Module developed by Napp ApS
+ * www.napp.dk
+ * Mads Møller
+ *
+ * Appcelerator Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc.
+ * and licensed under the Apache Public License (version 2)
  */
 
 #import "DkNappJockeyWebView.h"
@@ -130,26 +132,6 @@
 {
 }
 
-/*
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    
-    [url release];
-    url = [[[webview request] URL] retain];
-    NSString* urlAbs = [url absoluteString];
-    [[self proxy] replaceValue:urlAbs forKey:@"url" notification:NO];
-    
-    if ([self.proxy _hasListeners:@"load"]) {
-        NSDictionary *event = url == nil ? nil : [NSDictionary dictionaryWithObject:[self url] forKey:@"url"];
-        [self.proxy fireEvent:@"load" withObject:event];
-        
-    }
-    [webview setNeedsDisplay];
-   //TiUIWebViewProxy * ourProxy = (TiUIWebViewProxy *)[self proxy];
-   // [ourProxy webviewDidFinishLoad];
-}
-
-*/
 
 
 @end
