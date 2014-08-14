@@ -14,7 +14,7 @@
 @interface DkNappJockeyWebView : TiUIView<UIWebViewDelegate> {
     UIWebView *webview;
 	NSURL *url;
-    
+    NSString *lastValidLoad;
     BOOL debug;
     
 }
@@ -23,5 +23,13 @@
 
 -(void)render;
 -(void)sendJockeyData:(id)args;
+
+-(void)stopLoading;
+-(void)goBack;
+-(void)goForward;
+-(BOOL)isLoading;
+-(BOOL)canGoBack;
+-(BOOL)canGoForward;
+-(void)reload;
 
 @end

@@ -72,6 +72,47 @@
 	debug = [TiUtils boolValue:args];
 }
 
+- (void)reload
+{
+    RELEASE_TO_NIL(lastValidLoad);
+	if (webview == nil)
+	{
+		return;
+	}
+
+	[webview reload];
+}
+
+- (void)stopLoading
+{
+	[webview stopLoading];
+}
+
+- (void)goBack
+{
+	[webview goBack];
+}
+
+- (void)goForward
+{
+	[webview goForward];
+}
+
+-(BOOL)isLoading
+{
+	return [webview isLoading];
+}
+
+-(BOOL)canGoBack
+{
+	return [webview canGoBack];
+}
+
+-(BOOL)canGoForward
+{
+	return [webview canGoForward];
+}
+
 
 - (void)sendJockeyData:(id)args
 {
@@ -90,6 +131,18 @@
     if(debug){
         NSLog(@"[NappJockey] shouldStartLoadWithRequest url: %@", [[request URL] absoluteString]);
     }
+    
+    NSURL *newUrl = [request URL];
+    
+	if ([self.proxy _hasListeners:@"beforeload"] && newUrl != nil)
+	{
+		NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:[newUrl absoluteString], @"url", NUMINT(navigationType), @"navigationType", nil];
+		[self.proxy fireEvent:@"beforeload" withObject:event];
+	}
+    
+	if (navigationType != UIWebViewNavigationTypeOther) {
+		RELEASE_TO_NIL(lastValidLoad);
+	}
     
     // USING JOCKEY
     if ( [[[request URL] scheme] isEqualToString:@"jockey"] )
@@ -130,6 +183,33 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    // Wait until the UIWebView object has fully loaded.
+    if (webview.isLoading){
+        return;
+    }
+    
+    [url release];
+    url = [[[webview request] URL] retain];
+    
+    if(debug){
+        NSLog(@"[NappJockey] webViewDidFinishLoad url: %@", [url absoluteString]);
+    }
+    
+    NSString* urlAbs = [url absoluteString];
+    [[self proxy] replaceValue:urlAbs forKey:@"url" notification:NO];
+    
+    if ([self.proxy _hasListeners:@"load"]) {
+        if (![urlAbs isEqualToString:lastValidLoad] && url != nil) {
+            NSDictionary *event = [NSDictionary dictionaryWithObject:urlAbs forKey:@"url"];
+            [self.proxy fireEvent:@"load" withObject:event];
+            [lastValidLoad release];
+            lastValidLoad = [urlAbs retain];
+        }
+    }
 }
 
 

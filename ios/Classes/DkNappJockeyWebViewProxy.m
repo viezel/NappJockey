@@ -28,4 +28,48 @@
 }
 
 
+-(void)goBack:(id)args
+{
+	TiThreadPerformOnMainThread(^{[(DkNappJockeyWebView*)[self view] goBack];}, NO);
+}
+
+-(void)goForward:(id)args
+{
+	TiThreadPerformOnMainThread(^{[(DkNappJockeyWebView*)[self view] goForward];}, NO);
+}
+
+-(void)stopLoading:(id)args
+{
+	TiThreadPerformOnMainThread(^{[(DkNappJockeyWebView*)[self view] stopLoading];}, NO);
+}
+
+-(void)reload:(id)args
+{
+	TiThreadPerformOnMainThread(^{[(DkNappJockeyWebView*)[self view] reload];}, NO);
+}
+
+-(id)canGoBack:(id)args
+{
+	if ([self viewAttached])
+	{
+		__block BOOL result;
+		TiThreadPerformOnMainThread(^{result = [(DkNappJockeyWebView*)[self view] canGoBack];}, YES);
+		return NUMBOOL(result);
+	}
+	return NUMBOOL(NO);
+}
+
+-(id)canGoForward:(id)args
+{
+	if ([self viewAttached])
+	{
+		__block BOOL result;
+		TiThreadPerformOnMainThread(^{result = [(DkNappJockeyWebView*)[self view] canGoForward];}, YES);
+		return NUMBOOL(result);
+	}
+	return NUMBOOL(NO);
+}
+
+
+
 @end
