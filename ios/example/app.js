@@ -13,9 +13,17 @@ NappJockey.appendUserAgent("my custom string");
 // webview
 var webview = NappJockey.createWebView({
     top: 70,
-    url: "http://yourwebsite.com/jockeyjs/index.html",
+    url: "http://yourwebsite.com",
+    debug: true
 });
 
+webview.addEventListener('load', function(e) {
+    Ti.API.info('load');
+});
+
+webview.addEventListener('beforeload', function(e) {
+    Ti.API.info('beforeload');
+});
 
 webview.addEventListener('toggle-fullscreen', function(e) {
     Ti.API.info('toggle-fullscreen');
@@ -36,6 +44,7 @@ win.add(webview);
 var btn = Ti.UI.createButton({
     title: "Send event to webpage",
     top: "20dp",
+    right: "6dp",
     height: "40dp"
 });
 btn.addEventListener("click", function() {
@@ -46,3 +55,15 @@ btn.addEventListener("click", function() {
     });
 });
 win.add(btn);
+
+
+var btnReload = Ti.UI.createButton({
+    title: "reload",
+    top: "20dp",
+    left: "6dp",
+    height: "40dp"
+});
+btnReload.addEventListener("click", function() {
+    webview.reload();
+});
+win.add(btnReload);
