@@ -229,6 +229,50 @@
     }
 }
 
-
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    NSString *offendingUrl = [self url];
+    
+    if ([[error domain] isEqual:NSURLErrorDomain])
+    {
+        offendingUrl = [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey];
+        
+        // this means the pending request has been cancelled and should be
+        // safely squashed
+        if ([error code]==NSURLErrorCancelled)
+        {
+            return;
+        }
+    }
+    
+    NSLog(@"[ERROR] Error loading: %@, Error: %@",offendingUrl,error);
+    
+    if ([self.proxy _hasListeners:@"error"])
+    {
+        NSString * message = [TiUtils messageFromError:error];
+        NSMutableDictionary *event = [NSMutableDictionary dictionaryWithObject:message forKey:@"message"];
+        
+        // We combine some error codes into a single one which we share with Android.
+        NSInteger rawErrorCode = [error code];
+        NSInteger returnErrorCode = rawErrorCode;
+        
+        if (rawErrorCode == NSURLErrorUserCancelledAuthentication)
+        {
+            returnErrorCode = NSURLErrorUserAuthenticationRequired; // URL_ERROR_AUTHENTICATION
+        }
+        else if (rawErrorCode == NSURLErrorNoPermissionsToReadFile || rawErrorCode == NSURLErrorCannotCreateFile || rawErrorCode == NSURLErrorFileIsDirectory || rawErrorCode == NSURLErrorCannotCloseFile || rawErrorCode == NSURLErrorCannotWriteToFile || rawErrorCode == NSURLErrorCannotRemoveFile || rawErrorCode == NSURLErrorCannotMoveFile)
+        {
+            returnErrorCode = NSURLErrorCannotOpenFile; // URL_ERROR_FILE
+        }
+        else if (rawErrorCode == NSURLErrorDNSLookupFailed)
+        {
+            returnErrorCode = NSURLErrorCannotFindHost; // URL_ERROR_HOST_LOOKUP
+        }
+        
+        [event setObject:[NSNumber numberWithInteger:returnErrorCode] forKey:@"errorCode"];
+        [event setObject:offendingUrl forKey:@"url"];
+        [self.proxy fireEvent:@"error" withObject:event errorCode:returnErrorCode message:message];
+    }
+}
 
 @end
