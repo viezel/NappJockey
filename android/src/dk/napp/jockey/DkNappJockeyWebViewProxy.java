@@ -13,13 +13,16 @@ import java.util.HashMap;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.titanium.proxy.TiViewProxy;
+import org.appcelerator.titanium.TiC;
 import org.appcelerator.titanium.view.TiUIView;
 
 import android.app.Activity;
 import android.os.Handler;
 
 
-@Kroll.proxy(name="WebView", creatableInModule=DkNappJockeyModule.class)
+@Kroll.proxy(name="WebView", creatableInModule=DkNappJockeyModule.class, propertyAccessors = {
+	TiC.PROPERTY_URL
+})
 public class DkNappJockeyWebViewProxy extends TiViewProxy
 {
 	// Standard Debugging variables
