@@ -10,6 +10,7 @@
 #import "DkNappJockeyWebView.h"
 
 @implementation DkNappJockeyWebView
+@synthesize reloadData, reloadDataProperties;
 
 -(void)dealloc
 {
@@ -25,6 +26,8 @@
     }
     RELEASE_TO_NIL(webview);
     RELEASE_TO_NIL(url);
+    RELEASE_TO_NIL(reloadData);
+    RELEASE_TO_NIL(reloadDataProperties);
     RELEASE_TO_NIL(lastValidLoad);
     [super dealloc];
 }
@@ -70,8 +73,14 @@
 
 - (void)setUrl_:(id)args
 {
-	RELEASE_TO_NIL(url);
-	ENSURE_SINGLE_ARG(args,NSString);
+    ignoreNextRequest = YES;
+    [self setReloadData:args];
+    [self setReloadDataProperties:nil];
+    reloadMethod = @selector(setUrl_:);
+    
+    RELEASE_TO_NIL(url);
+    RELEASE_TO_NIL(lastValidLoad);
+    ENSURE_SINGLE_ARG(args,NSString);
     
 	url = [[TiUtils toURL:args proxy:(TiProxy*)self.proxy] retain];
     
@@ -92,12 +101,16 @@
 - (void)reload
 {
     RELEASE_TO_NIL(lastValidLoad);
-	if (webview == nil)
-	{
-		return;
-	}
-
-	[webview reload];
+    if (webview == nil)
+    {
+        return;
+    }
+    if (reloadData != nil)
+    {
+        [self performSelector:reloadMethod withObject:reloadData withObject:reloadDataProperties];
+        return;
+    }
+    [webview reload];
 }
 
 - (void)stopLoading
@@ -190,6 +203,24 @@
         return NO;
     }
     
+    NSString * scheme = [[newUrl scheme] lowercaseString];
+    if ([scheme hasPrefix:@"http"] || [scheme isEqualToString:@"ftp"]
+        || [scheme isEqualToString:@"file"] || [scheme isEqualToString:@"app"]) {
+        DebugLog(@"[DEBUG] New scheme: %@",request);
+        BOOL valid = !ignoreNextRequest;
+        if ([scheme hasPrefix:@"http"]) {
+            //UIWebViewNavigationTypeOther means we are either in a META redirect
+            //or it is a js request from within the page
+            valid = valid && (navigationType != UIWebViewNavigationTypeOther);
+        }
+        if (valid) {
+            [self setReloadData:[newUrl absoluteString]];
+            [self setReloadDataProperties:nil];
+            reloadMethod = @selector(setUrl_:);
+        }
+        return YES;
+    }
+    
     if(debug){
         NSLog(@"[NappJockey] No jockey event - fallback");
     }
@@ -227,6 +258,8 @@
             lastValidLoad = [urlAbs retain];
         }
     }
+    
+    ignoreNextRequest = NO;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
