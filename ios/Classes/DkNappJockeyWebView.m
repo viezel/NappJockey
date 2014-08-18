@@ -11,6 +11,23 @@
 
 @implementation DkNappJockeyWebView
 
+-(void)dealloc
+{
+    if (webview!=nil)
+    {
+        webview.delegate = nil;
+        
+        // per doc, must stop webview load before releasing
+        if (webview.loading)
+        {
+            [webview stopLoading];
+        }
+    }
+    RELEASE_TO_NIL(webview);
+    RELEASE_TO_NIL(url);
+    RELEASE_TO_NIL(lastValidLoad);
+    [super dealloc];
+}
 
 -(UIWebView*)webview
 {
