@@ -11,19 +11,37 @@ package dk.napp.jockey;
 import java.util.HashMap;
 
 import org.appcelerator.kroll.annotations.Kroll;
+import org.appcelerator.kroll.common.AsyncResult;
 import org.appcelerator.kroll.common.Log;
+import org.appcelerator.kroll.common.TiMessenger;
 import org.appcelerator.titanium.proxy.TiViewProxy;
+import org.appcelerator.titanium.TiApplication;
+import org.appcelerator.titanium.TiC;
 import org.appcelerator.titanium.view.TiUIView;
 
 import android.app.Activity;
 import android.os.Handler;
+import android.os.Message;
 
 
-@Kroll.proxy(name="WebView", creatableInModule=DkNappJockeyModule.class)
+@Kroll.proxy(name="WebView", creatableInModule=DkNappJockeyModule.class, propertyAccessors = {
+	TiC.PROPERTY_URL
+})
 public class DkNappJockeyWebViewProxy extends TiViewProxy
 {
 	// Standard Debugging variables
 	private static final String TAG = "DkNappJockeyWebViewProxy";
+	private static final int MSG_FIRST_ID = TiViewProxy.MSG_LAST_ID + 1;
+
+	private static final int MSG_GO_BACK = MSG_FIRST_ID + 101;
+	private static final int MSG_GO_FORWARD = MSG_FIRST_ID + 102;
+	private static final int MSG_RELOAD = MSG_FIRST_ID + 103;
+	private static final int MSG_STOP_LOADING = MSG_FIRST_ID + 104;
+	private static final int MSG_CAN_GO_BACK = MSG_FIRST_ID + 108;
+	private static final int MSG_CAN_GO_FORWARD = MSG_FIRST_ID + 109;
+
+	protected static final int MSG_LAST_ID = MSG_FIRST_ID + 999;
+	
 	private DkNappJockeyWebView webView;
 
 	// Constructor
@@ -42,6 +60,11 @@ public class DkNappJockeyWebViewProxy extends TiViewProxy
 		if (webView == null) {
 			webView = new DkNappJockeyWebView(this);
 		}
+	}
+	
+	public DkNappJockeyWebView getWebView()
+	{
+		return (DkNappJockeyWebView) getOrCreateView();
 	}
 
 	// Methods
@@ -79,4 +102,85 @@ public class DkNappJockeyWebViewProxy extends TiViewProxy
 		super.onHasListenersChanged(eventName, hasListeners);
 	}
 	
+	@Override
+	public boolean handleMessage(Message msg)
+	{
+		if (peekView() != null) {
+			switch (msg.what) {
+				case MSG_GO_BACK:
+					getWebView().goBack();
+					return true;
+				case MSG_GO_FORWARD:
+					getWebView().goForward();
+					return true;
+				case MSG_RELOAD:
+					getWebView().reload();
+					return true;
+				case MSG_STOP_LOADING:
+					getWebView().stopLoading();
+					return true;
+				case MSG_CAN_GO_BACK: {
+					AsyncResult result = (AsyncResult) msg.obj;
+					result.setResult(getWebView().canGoBack());
+					return true;
+				}
+				case MSG_CAN_GO_FORWARD: {
+					AsyncResult result = (AsyncResult) msg.obj;
+					result.setResult(getWebView().canGoForward());
+					return true;
+				}
+			}
+		}
+		return super.handleMessage(msg);
+	}
+	
+	@Kroll.method
+	public void goBack()
+	{
+		getMainHandler().sendEmptyMessage(MSG_GO_BACK);
+	}
+
+	@Kroll.method
+	public void goForward()
+	{
+		getMainHandler().sendEmptyMessage(MSG_GO_FORWARD);
+	}
+
+	@Kroll.method
+	public void reload()
+	{
+		getMainHandler().sendEmptyMessage(MSG_RELOAD);
+	}
+
+	@Kroll.method
+	public void stopLoading()
+	{
+		getMainHandler().sendEmptyMessage(MSG_STOP_LOADING);
+	}
+	
+	@Kroll.method
+	public boolean canGoBack()
+	{
+		if (peekView() != null) {
+			if (TiApplication.isUIThread()) {
+				return getWebView().canGoBack();
+			} else {
+				return (Boolean) TiMessenger.sendBlockingMainMessage(getMainHandler().obtainMessage(MSG_CAN_GO_BACK));
+			}
+		}
+		return false;
+	}
+	
+	@Kroll.method
+	public boolean canGoForward()
+	{
+		if (peekView() != null) {
+			if (TiApplication.isUIThread()) {
+				return getWebView().canGoForward();
+			} else {
+				return (Boolean) TiMessenger.sendBlockingMainMessage(getMainHandler().obtainMessage(MSG_CAN_GO_FORWARD));
+			}
+		}
+		return false;
+	}
 }
