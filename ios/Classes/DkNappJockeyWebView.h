@@ -15,11 +15,18 @@
     UIWebView *webview;
 	NSURL *url;
     NSString *lastValidLoad;
-    BOOL debug;
     
+    BOOL ignoreNextRequest;
+    id reloadData;
+    id reloadDataProperties;
+    SEL reloadMethod;
+    
+    BOOL debug;
 }
 
 @property(nonatomic,readonly) id url;
+@property(nonatomic,readwrite,retain) id reloadData;
+@property(nonatomic,readwrite,retain) id reloadDataProperties;
 
 -(void)render;
 -(void)sendJockeyData:(id)args;
