@@ -51,15 +51,9 @@ public class DkNappJockeyWebViewProxy extends TiViewProxy
 	}
 
 	@Override
-	public TiUIView createView(Activity arg0) {
-		initView();
+	public TiUIView createView(Activity activity) {
+		webView = new DkNappJockeyWebView(this);
 		return webView;
-	}
-
-	private void initView() {
-		if (webView == null) {
-			webView = new DkNappJockeyWebView(this);
-		}
 	}
 	
 	public DkNappJockeyWebView getWebView()
