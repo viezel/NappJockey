@@ -62,6 +62,20 @@ Customize the UserAgent globally, so every request has your value.
 Have a look in the example folder. There you will find a HTML webpage and two javascript files. The html and javascript should be pretty self explanatory.
 
 
+## Changelog
+
+* 1.1.0 
+  * Extended the API on Android (parity #3)
+  * Error events #2
+  * Bugfix issue #4 Crash when re-launching activity on Android 
+  * Thanks to @stephenwoodford
+
+* 1.0.1 
+  * Extended the API on iOS
+
+* 1.0
+  * Init
+
 ## Author
 
 **Mads Møller**  
