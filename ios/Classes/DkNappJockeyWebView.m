@@ -10,7 +10,7 @@
 #import "DkNappJockeyWebView.h"
 
 @implementation DkNappJockeyWebView
-@synthesize reloadData, reloadDataProperties;
+@synthesize reloadData, reloadDataProperties, url;
 
 -(void)dealloc
 {
@@ -160,7 +160,7 @@
 {
     if(debug){
         NSLog(@"[NappJockey] shouldStartLoadWithRequest url: %@", [[request URL] absoluteString]);
-    }
+    } 
     
     NSURL *newUrl = [request URL];
     
@@ -304,7 +304,8 @@
         
         [event setObject:[NSNumber numberWithInteger:returnErrorCode] forKey:@"errorCode"];
         [event setObject:offendingUrl forKey:@"url"];
-        [self.proxy fireEvent:@"error" withObject:event errorCode:returnErrorCode message:message];
+        [self.proxy fireEvent:@"error" withObject:event];
+        //[self.proxy fireEvent:@"error" withObject:event errorCode:returnErrorCode message:message];
     }
 }
 
