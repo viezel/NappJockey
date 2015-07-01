@@ -5,6 +5,8 @@ import java.util.Map;
 import android.webkit.JsResult;
 import android.widget.Toast;
 
+import org.appcelerator.kroll.KrollDict;
+import org.appcelerator.titanium.TiC;
 import org.appcelerator.titanium.proxy.TiViewProxy;
 
 import ti.modules.titanium.ui.widget.webview.TiUIWebView;
@@ -44,8 +46,21 @@ public class DkNappJockeyWebView extends TiUIWebView  {
 		jockey.setWebViewClient(new TiWebViewClient(this, getWebView()) {
 			@Override
 			public void onPageFinished(WebView view, String url) {
-				super.onPageFinished(view, url);
+				// In 4.0.0 we cannot call super.onPageFinished anymore, because TiWebViewClient assumes the proxy to be a WebViewProxy
+				//super.onPageFinished(view, url);
+				
 				//Log.d(TAG, "page finished loading!");
+				
+				TiUIWebView webview = DkNappJockeyWebView.this;
+				
+				TiViewProxy proxy = webview.getProxy();
+				
+				webview.changeProxyUrl(url);
+				
+				KrollDict data = new KrollDict();
+				data.put("url", url);
+				
+				proxy.fireEvent(TiC.EVENT_LOAD, data);
 			}
 		});
 		
