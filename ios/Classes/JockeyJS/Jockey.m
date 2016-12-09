@@ -50,7 +50,7 @@
 
 + (void)on:(NSString*)type perform:(JockeyHandler)handler
 {
-    void (^ extended)(NSDictionary *payload, void (^ complete)()) = ^(NSDictionary *payload, void(^ complete)()) {
+    void (^ extended)(UIWebView *webView, NSDictionary *payload, void (^ complete)()) = ^(UIWebView *webView, NSDictionary *payload, void(^ complete)()) {
         handler(payload);
         complete();
     };
@@ -99,7 +99,7 @@
     NSError *err;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:payload options:NSJSONWritingPrettyPrinted error:&err];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSString *javascript = [NSString stringWithFormat:@"Jockey.trigger(\"%@\", %i, %@);", type, [messageId integerValue], jsonString];
+    NSString *javascript = [NSString stringWithFormat:@"Jockey.trigger(\"%@\", %li, %@);", type, (long)[messageId integerValue], jsonString];
     
     [webView stringByEvaluatingJavaScriptFromString:javascript];
     
@@ -142,9 +142,6 @@
     
     NSArray *listenerList = (NSArray*)[listeners objectForKey:type];
 
-    NSLog(@"type %@", type);
-    NSLog(@"messageId %@", messageId);
-    
     __block NSInteger executedCount = 0;
     
     void (^complete)() = ^() {
@@ -156,7 +153,7 @@
     };
     
     for (JockeyAsyncHandler handler in listenerList) {
-        handler(payload, complete);
+        handler(webView, payload, complete);
     }
 }
 
