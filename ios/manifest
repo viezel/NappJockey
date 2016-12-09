@@ -16,3 +16,4 @@ moduleid: dk.napp.jockey
 guid: 91b2148d-eafb-4296-bec0-47c5df696482
 platform: iphone
 minsdk: 6.0.0.GA
+architectures: armv7 i386 x86_64 arm64

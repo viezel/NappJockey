@@ -43,7 +43,8 @@
 		webview.backgroundColor = [UIColor whiteColor];
 		webview.contentMode = UIViewContentModeRedraw;
 		webview.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-		[self addSubview:webview];
+        webview.scrollView.bounces = NO;
+        [self addSubview:webview];
 	}
     
 	return webview;
